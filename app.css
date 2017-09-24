@@ -1,0 +1,157 @@
+@charset "UTF-8";
+body {
+  font-size: 12px;
+  color: #345274;
+  height: 100vh;
+  background: #f2f2f2 linear-gradient(to bottom, white 0%, #f2f2f2 100%); }
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 1s;
+  background: #ccc;
+  overflow-y: scroll;
+  position: 　relative; }
+  .container .btn {
+    transition: all .5s;
+    opacity: 0;
+    margin-top: 2em;
+    display: none;
+    font-size: 2em;
+    animation: fadeInTop 1.5s; }
+    .container .btn i {
+      left: 1em; }
+  .container .btn:hover {
+    background-color: #53dbff;
+    background-image: linear-gradient(19deg, #65bbf7 0%, #98d2fa 100%);
+    box-shadow: 5px 5px 12px rgba(194, 195, 195, 0.75); }
+
+.container.block, .about.block {
+  display: block;
+  text-align: center; }
+
+.intro {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  color: #111;
+  animation: fadeInTop 2s ease-out;
+  background: #fff;
+  transition: all 1.5s; }
+  .intro span {
+    opacity: 1;
+    transition: opacity .5s; }
+
+.intro.active {
+  height: 3em;
+  width: 3em;
+  border-radius: .5em;
+  margin: auto;
+  margin-top: 3em; }
+  .intro.active span {
+    opacity: 0; }
+
+.logo {
+  width: 80%;
+  animation: fadeInTop 1.5s; }
+
+.about {
+  margin-top: 15vh;
+  display: none; }
+  .about-name {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 5.5em;
+    font-weight: 600;
+    animation: fadeInTop 1.5s;
+    text-shadow: 5px 5px 5px rgba(194, 195, 195, 0.75);
+    color: #fff;
+    letter-spacing: 1px;
+    transition: all 2s;
+    margin-bottom: .25em; }
+  .about-name.reveal {
+    text-shadow: 5px 5px 5px rgba(194, 195, 195, 0); }
+  .about-title {
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    color: #0a80d2;
+    animation: fadeInTop .5s; }
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-15px); }
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
+
+.bs {
+  box-shadow: inset 0 7em 10em -5em rgba(255, 255, 255, 0.6), 0 0.3em 0.5em -0.2em #646464, 0 1em 2em -0.75em rgba(100, 100, 100, 0.75), 0 1em 3em -0.5em rgba(100, 100, 100, 0.5), 0 3em 3em -0.25em rgba(100, 100, 100, 0.2); }
+
+.bg-white {
+  background-color: #fff; }
+
+.bg-blue {
+  background: #35a6f5;
+  box-shadow: inset 0 7em 10em -5em rgba(255, 255, 255, 0.6), 0 0.3em 0.5em -0.2em #2f83bd, 0 1em 2em -0.75em rgba(47, 131, 189, 0.75), 0 1em 3em -0.5em rgba(47, 131, 189, 0.5), 0 3em 3em -0.25em rgba(47, 131, 189, 0.2); }
+
+.bg-grey {
+  background: #969696;
+  box-shadow: inset 0 7em 10em -5em rgba(255, 255, 255, 0.6), 0 0.3em 0.5em -0.2em #646464, 0 1em 2em -0.75em rgba(100, 100, 100, 0.75), 0 1em 3em -0.5em rgba(100, 100, 100, 0.5), 0 3em 3em -0.25em rgba(100, 100, 100, 0.2); }
+/* Button Style */
+.btn {
+  background: #111;
+  color: #fff;
+  margin: 1em;
+  border: none;
+  transition: all 1s;
+  padding: 1em 0em 1em 3em;
+  font-weight: 600;
+  font-size: 1.5em;
+  letter-spacing: .05em;
+  border-radius: 2em;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 1em;
+  width: 0;
+  max-width: 0; }
+  .btn i {
+    position: absolute;
+    left: .75em;
+    top: .75em; }
+  .btn i.fa {
+    font-size: 1.25em; }
+  .btn .text {
+    display: inline-block;
+    opacity: 0;
+    transition: all .3s;
+    transition-delay: 0s;
+    min-width: 100px;
+    transform: translateX(0.5em); }
+
+.btn.expand, .expand-on-hover:hover {
+  padding: 1em 2em 1em 3.5em;
+  max-width: 10em;
+  width: auto; }
+  .btn.expand .text, .expand-on-hover:hover .text {
+    opacity: 1;
+    transition-delay: .3s;
+    min-width: inherit;
+    transform: translateX(0); }
+
+.btn-purple {
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); }
+
+.btn-grey {
+  background-color: rgba(204, 204, 204, 0.5); }
