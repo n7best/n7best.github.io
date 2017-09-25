@@ -1,8 +1,8 @@
 import './app.sass';
 import { h, wait } from './utils/engine';
 import { logo, intro, intro_text } from './view/intro';
-import { about, about_name, about_title, down_indicator} from './view/about';
-
+import { about, about_name, about_title, down_indicator, about_detail} from './view/about';
+import { MoveOnScroll } from './hoc/moveOnScroll';
   
 const container = h('div', 'container', intro, about, down_indicator)
 document.body.appendChild(container)
@@ -30,7 +30,7 @@ wait(2000)
 })
 .then( ()=> {
   intro.className = 'intro active bg-blue'
-  
+  MoveOnScroll(intro)
   return wait(500)
 })
 .then( ()=> {
@@ -41,4 +41,5 @@ wait(2000)
 })
 .then( ()=> {
   down_indicator.style.opacity = 1;
+  container.appendChild(about_detail(container))
 })

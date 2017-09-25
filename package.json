@@ -5,7 +5,8 @@
   "scripts": {
     "test": "gulp",
     "start": "node index.js",
-    "watch": "nodemon index.js"
+    "watch": "nodemon index.js",
+    "deploy": "gh-pages -d public"
   },
   "author": "Charlie Lin <n7best>",
   "license": "MIT",
@@ -20,6 +21,7 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^7.1.4",
+    "gh-pages": "^1.0.0",
     "gulp": "3.9.1",
     "gulp-buffer": "0.0.2",
     "gulp-clean-css": "2.0.12",
