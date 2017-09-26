@@ -9,10 +9,16 @@ export const MoveOnScroll = (component, opts = {}) => {
           
         },
         trigger: (change, el) => el.style.transform = `translate(0px, ${change}px)`,
-        onVisible: ()=>null,
-        onInvisible: ()=>null,
+        onVisible: null,
+        onInvisible: null,
         container: component.parentElement
     }, opts)
+
+    if(typeof component['__mos'] === 'undefined'){
+        component.__mos = {
+            isVisible: false
+        }
+    }
 
     options.container.addEventListener('scroll', e=>updateItem(component, options.container))
 
@@ -38,12 +44,23 @@ export const MoveOnScroll = (component, opts = {}) => {
 
         if(isVisible){
           
+          if(!el.__mos.isVisible){
+                //visible first time
+                el.__mos.isVisible = true
+                if(options.onVisible) options.onVisible(el);
+          }
+
           if(options.animation.enable){
             let changeValue = 0
             changeValue = Math.abs(offset) / window.innerHeight * options.animation.max + options.animation.min
             options.trigger(changeValue, el)
           }
           
+        }else{
+            if(el.__mos.isVisible){
+                el.__mos.isVisible = false
+                if(options.onInvisible) options.onInvisible(el);
+            }
         }
     }
 

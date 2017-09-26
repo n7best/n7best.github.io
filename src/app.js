@@ -2,6 +2,7 @@ import './app.sass';
 import { h, wait } from './utils/engine';
 import { logo, intro, intro_text } from './view/intro';
 import { about, about_name, about_title, down_indicator, about_detail} from './view/about';
+import { skills } from './view/skill';
 import { MoveOnScroll } from './hoc/moveOnScroll';
   
 const container = h('div', 'container', intro, about, down_indicator)
@@ -41,5 +42,8 @@ wait(2000)
 })
 .then( ()=> {
   down_indicator.style.opacity = 1;
+
+  //add main content
   container.appendChild(about_detail(container))
+  container.appendChild(skills(container))
 })

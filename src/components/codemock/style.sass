@@ -1,0 +1,130 @@
+.code-mock {
+    width: 50em;
+    margin: 10em auto;
+    text-align: left;
+
+    &_menu {
+        width: 100%;
+        box-sizing: border-box;
+        height: 3em;
+        margin: 0 auto;
+        border-top-right-radius: 1em;
+        border-top-left-radius: 1em;
+
+        &-btn {
+            height: 1em;
+            width: 1em;
+            border-radius: 50%;
+            border: 1px solid #000;
+            position: relative;
+            top: 1em;
+            left: 1em;
+            display: inline-block;
+            margin: auto .25em;
+        }
+
+        &-btn.close {
+            background-color: #ff3b47;
+            border-color: #9d252b;
+        }
+
+        &-btn.minimize {
+            background-color: #ffc100;
+            border-color: #9d802c;
+        }
+
+        &-btn.zoom {
+            background-color: #00d742;
+            border-color: #049931;
+        }
+    }
+
+    &_editor {
+        width: 100%;
+        height: 20em;
+        box-sizing: border-box;
+        padding: 2em;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+
+        &-line {
+            font-size: 1.5em;
+            white-space: pre;
+            overflow: hidden;
+            position: relative;
+            width: 0;
+
+            $elements: 10;
+            $pstart: 1;
+            $cstart: 2;
+
+            @for $i from 1 to $elements {
+                $j: $i - 1;
+                &:nth-child(#{$i}) {
+                    animation: type .5s $pstart+$j*2s steps(20, end) forwards;
+                    .code-mock_editor-cursor {
+                        animation: blink 1s $cstart+$j*2s 1 forwards;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.monoki {
+    font-family: 'Arimo', sans-serif;
+
+    .code-mock_menu {
+        background-color: #171717;
+    }
+
+    .code-mock_editor {
+        background-color: #272822;
+        color: #F8F8F2;
+
+        &-line {
+            &:nth-child(1){
+                
+                margin-top: 0;
+            }
+            &:nth-child(2){
+                color: #A6E22E;
+            }
+            &:nth-child(3){
+                color: #66D9EF;
+            }
+            &:nth-child(4){
+                color: #F92672;
+            }
+        }
+
+        &-cursor {
+            color: #F8F8F2;
+            margin-left: .5em;
+        }
+    }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes type {
+  to {
+    width: 17em;
+  }
+}
