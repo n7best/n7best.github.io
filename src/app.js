@@ -37,6 +37,7 @@ wait(2000)
 .then( ()=> {
   container.className = 'container bg-white block'
   about.className = 'about block'
+  
   down_indicator.style.display = 'inline-block';
   return wait(500)
 })

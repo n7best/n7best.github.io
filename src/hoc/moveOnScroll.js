@@ -2,12 +2,14 @@ export const MoveOnScroll = (component, opts = {}) => {
     const options = Object.assign({},{
         animation: {
           enable: true,
-          max: 40,
-          min: 0,
+          
+          
           transform: true,
           type: '',
           
         },
+        min: 0,
+        max: 40,
         trigger: (change, el) => el.style.transform = `translate(0px, ${change}px)`,
         onVisible: null,
         onInvisible: null,
@@ -48,11 +50,12 @@ export const MoveOnScroll = (component, opts = {}) => {
                 //visible first time
                 el.__mos.isVisible = true
                 if(options.onVisible) options.onVisible(el);
+                //console.log('seen', el, holder)
           }
 
           if(options.animation.enable){
             let changeValue = 0
-            changeValue = Math.abs(offset) / window.innerHeight * options.animation.max + options.animation.min
+            changeValue = Math.abs(offset) / window.innerHeight * options.max + options.min
             options.trigger(changeValue, el)
           }
           
@@ -75,4 +78,13 @@ export const moveOnScrollOpacity = (component, opt = {}, withold = 25) =>{
             el.style.opacity =  change / parseFloat(withold) 
         }
     }, opt))
+}
+
+export const showOnSeen = (component, container) => {
+    return MoveOnScroll(component, {
+        container,
+        onVisible: el=>el.classList.add('visible'),
+        onInvisible: el=>el.classList.remove('visible'),
+        max: 0
+    }, 0)
 }

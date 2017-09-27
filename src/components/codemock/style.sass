@@ -3,6 +3,27 @@
     margin: 10em auto;
     text-align: left;
 
+    &.visible {
+        .code-mock_editor {
+            &-line {
+                
+                $elements: 10;
+                $pstart: 1;
+                $cstart: 2;
+
+                @for $i from 1 to $elements {
+                    $j: $i - 1;
+                    &:nth-child(#{$i}) {
+                        animation: type .5s $pstart+$j*2s steps(20, end) forwards;
+                        .code-mock_editor-cursor {
+                            animation: blink 1s $cstart+$j*2s 1 forwards;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     &_menu {
         width: 100%;
         box-sizing: border-box;
@@ -53,20 +74,6 @@
             overflow: hidden;
             position: relative;
             width: 0;
-
-            $elements: 10;
-            $pstart: 1;
-            $cstart: 2;
-
-            @for $i from 1 to $elements {
-                $j: $i - 1;
-                &:nth-child(#{$i}) {
-                    animation: type .5s $pstart+$j*2s steps(20, end) forwards;
-                    .code-mock_editor-cursor {
-                        animation: blink 1s $cstart+$j*2s 1 forwards;
-                    }
-                }
-            }
         }
     }
 }
