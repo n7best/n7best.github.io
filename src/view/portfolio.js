@@ -6,7 +6,7 @@ const data = [
     {
         title: 'Project Web',
         catalog: 'Graphic Design',
-        img: 'assets/portfolio/1.jpg'
+        img: 'assets/portfolio/4.jpg'
     },
     {
         title: 'Logo Design',
@@ -29,7 +29,7 @@ export const portfolio = container => {
 
     const display = h('div', 'portfolio_photos', data.map( item=> {
         const img = h('img', 'portfolio_photos-item-img')
-        const icon = h('h3', 'portfolio_photos-item-icon', item.title[0])
+        const icon = h('h3', 'portfolio_photos-item-icon', item.title[0].toUpperCase() + item.title[1].toLowerCase())
         img.src = item.img
         icon.style.backgroundImage = `url(${item.img})`
 
@@ -44,6 +44,18 @@ export const portfolio = container => {
             h('h3', 'portfolio_photos-item-title', title_chunks)
         )
     }))
+
+    container.onMounted = ()=> {
+        var iso = new Isotope( display, {
+            // options
+            itemSelector: '.portfolio_photos-item',
+            layoutMode: 'masonry',
+            masonry: {
+                isFitWidth: true
+                }
+          });
+          
+    }
 
     return h('div', 'portfolio bg-dark',
         moveOnScrollOpacity(header('My latest crafts', 'Portfolio', ''), {

@@ -52,4 +52,9 @@ wait(2000)
   container.appendChild(skills(container))
   container.appendChild(experiences(container))
   container.appendChild(portfolio(container))
+
+  return wait(1000)
+})
+.then( ()=> {
+  container.onMounted()
 })
