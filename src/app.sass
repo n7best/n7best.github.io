@@ -12,7 +12,7 @@ body {
 
 */
 
-h1,h2,h3,h4,h5 {
+h1,h2,h3,h4,h5,h6 {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
   margin: .5em auto
@@ -22,6 +22,16 @@ h3 {
   font-size: 2em;
 }
 
+h6 {
+    font-size: 1.25em;
+    margin: 0;
+}
+
+p {
+  font-size: 1.5em;
+  font-family: 'Arimo', sans-serif;
+  line-height: 1.5em;
+}
 /*
 
  View
@@ -38,7 +48,7 @@ h3 {
   background: #ccc;
   overflow-y: scroll;
   position:　relative;
-  .btn {
+  .about-btn {
     transition: all .5s;
     opacity: 0;
     margin-top: 2em;
@@ -52,7 +62,7 @@ h3 {
     }
   }
   
-  .btn:hover {
+  .about-btn:hover {
     background-color: #53dbff;
     background-image: linear-gradient(19deg, #65bbf7 0%, #98d2fa 100%);
     box-shadow: 5px 5px 12px rgba(194, 195, 195, 0.75);
@@ -198,9 +208,89 @@ h3 {
     height: auto;
     width: 100%;
     margin-top: -15em;
+    transition: all .5s;
+  }
+
+  &-btn {
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 5em !important;
+    z-index: 1;
   }
 }
 
+.experiences {
+  min-height: 60em;
+  background: #f2f2f2 linear-gradient(to bottom, white 0%, #f2f2f2 100%);
+  box-shadow: 0px 0px 5em rgba(17, 17, 17, .33);
+  transform: perspective(1000px);
+  padding: 8em 0;
+  color: #111;
+  position: relative;
+
+  &_intro {
+    max-width: 980px;
+    width: 60%;
+    margin: 3em auto;
+    font-size: 1.5em;
+    font-family: 'Arimo', sans-serif;
+    line-height: 1.5em;
+    color: #4e4e4e;
+    transition: all .5s;
+  }
+
+  &_content {
+    margin: 10em auto;
+
+    p {
+      color: #4e4e4e;
+      font-size: 1em;
+      line-height: 1.75em;
+    }
+
+    &-item {
+      margin: 3em auto;
+      &_date {
+        padding-top: 1.25em;
+
+        &-year {
+          font-size: 1.75em;
+          font-weight: 300;
+          margin: 0 auto;
+        }
+
+        &-month {
+          font-family: 'Arimo', sans-serif;
+          font-size: 1em;
+          margin-right: 3.5em;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+.icon-list {
+    list-style: none;
+    padding: 0;
+    font-size: 3em;
+    margin: .75em auto;
+
+    li {
+      display: inline-block;
+      margin-right: .5em;
+      color: #8e8e8e;
+      background: -webkit-linear-gradient(#8e8e8e, #2f2f2f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    li:hover {
+      color: #af1e2d;
+      background: -webkit-linear-gradient(#e24f60, #af1e2d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+}
 
 @keyframes fadeInTop {
   from {
@@ -278,4 +368,18 @@ h3 {
 
 .m-b-5 {
   margin-bottom: 5em;
+}
+
+.text-grd-red {
+  color: #af1e2d;
+  background: -webkit-linear-gradient(#e24f60, #af1e2d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-grd-blue {
+  color: #98d2fa;
+  background: -webkit-linear-gradient(#98d2fa, #65bbf7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

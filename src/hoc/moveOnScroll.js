@@ -80,11 +80,11 @@ export const moveOnScrollOpacity = (component, opt = {}, withold = 25) =>{
     }, opt))
 }
 
-export const showOnSeen = (component, container) => {
+export const showOnSeen = (component, container, clz = 'visible') => {
     return MoveOnScroll(component, {
         container,
-        onVisible: el=>el.classList.add('visible'),
-        onInvisible: el=>el.classList.remove('visible'),
+        onVisible: el=>el.classList.add(clz),
+        onInvisible: el=>el.classList.remove(clz),
         max: 0
     }, 0)
 }

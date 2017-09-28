@@ -3,7 +3,9 @@ import { button } from '../components/button/index.js'
 import { header } from '../components/header/index.js'
 import { codeMock } from '../components/codemock/index.js'
 import { progress } from '../components/progress/index.js'
-import { moveOnScrollOpacity,showOnSeen } from '../hoc/moveOnScroll'
+import { MoveOnScroll, moveOnScrollOpacity,showOnSeen } from '../hoc/moveOnScroll'
+
+const morelink = 'https://www.linkedin.com/in/n7best/'
 
 const codes = [
     `[`,
@@ -76,6 +78,9 @@ export const skills = container => {
     const bgimg = h('img', 'skills-bg')
     bgimg.src = "assets/img/skillbackground.jpg";
 
+    const btnMore = button('fa fa-info-circle','Learn More','skills-btn')
+    btnMore.addEventListener('click', e=> window.open(morelink, '_blank'))
+
     return h('div', 'skills',
         moveOnScrollOpacity(header('What I\'m good at', 'Professional Skills', ''), {
             container
@@ -86,7 +91,7 @@ export const skills = container => {
             {container}, 15  
         ),
         showOnSeen(codeMock(codes), container),
-        moveOnScrollOpacity(header('', 'Your favor apps, My expertises', '', 'text-left w-60p'), {
+        moveOnScrollOpacity(header('', 'Your favor apps, My expertise', '', 'text-left w-60p'), {
             container
         }),
         moveOnScrollOpacity(h(
@@ -95,6 +100,7 @@ export const skills = container => {
             {container}, 15  
         ),
         h('div', 'skills_data m-auto w-60p text-left', skill_list),
-        bgimg
+        showOnSeen(btnMore,container, 'expand'),
+        MoveOnScroll(bgimg, {container})
     );
 }

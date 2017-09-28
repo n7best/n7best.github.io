@@ -5,7 +5,7 @@ import { moveOnScrollOpacity } from '../hoc/moveOnScroll'
 
 export const about_name = h('p', 'about-name', 'Charlie Lin')
 export const about_title = h('p', 'about-title', 'WEB DESIGNER / WEB DEVELOPER')
-export const down_indicator = button('fa fa-long-arrow-down', '', 'btn-grey')
+export const down_indicator = button('fa fa-long-arrow-down', '', 'btn-grey about-btn')
 export const about = h('div', 'about', about_name, about_title)
 
 
