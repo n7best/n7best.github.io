@@ -29,7 +29,7 @@ const data = [
         },
         to: {
             year: '2017',
-            month: 'apr'
+            month: 'Apr'
         },
         title: 'Communication Technician',
         company: 'United States Marine Corps',
@@ -59,6 +59,18 @@ export const experiences = container => {
         )
     })
 
+    const bgImg = h('img', 'table')
+    bgImg.src = 'assets/img/table.png'
+
+    const lamp = h('img', 'lamp')
+    lamp.src = 'assets/img/lamp.png'
+
+    const book = h('img', 'book')
+    book.src = 'assets/img/book.png'
+
+    const tabledeco = h('img', 'tabledeco')
+    tabledeco.src = 'assets/img/tabledeco.png'
+
     const el = h('div', 'experiences',
         moveOnScrollOpacity(header('Where I came from', 'Work Experiences', ''), {
             container
@@ -70,6 +82,12 @@ export const experiences = container => {
         ),
         h('div', 'experiences_content text-left w-60p', 
         timeline
+        ),
+        h('div', 'experiences_bg', 
+            MoveOnScroll(bgImg,{container}),
+            moveOnScrollOpacity(lamp,{container}),
+            moveOnScrollOpacity(book,{container}),
+            moveOnScrollOpacity(tabledeco, {container})
         )
     )
 

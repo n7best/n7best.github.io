@@ -4,6 +4,7 @@ import { h, wait } from './utils/engine';
 import { logo, intro, intro_text } from './view/intro';
 import { about, about_name, about_title, down_indicator, about_detail} from './view/about';
 import { skills } from './view/skill';
+import { portfolio } from './view/portfolio'
 import { experiences } from './view/experience';
 import { MoveOnScroll } from './hoc/moveOnScroll';
   
@@ -50,4 +51,5 @@ wait(2000)
   container.appendChild(about_detail(container))
   container.appendChild(skills(container))
   container.appendChild(experiences(container))
+  container.appendChild(portfolio(container))
 })
