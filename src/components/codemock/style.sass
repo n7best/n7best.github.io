@@ -1,8 +1,14 @@
+$content-break: "only screen and (max-width : 960px)";
+
 .code-mock {
     width: 50em;
     margin: 10em auto;
     text-align: left;
 
+    @media #{$content-break} {
+        width: 80%;
+        margin: 10em auto;
+    }
     &.visible {
         .code-mock_editor {
             &-line {

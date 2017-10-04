@@ -19,9 +19,19 @@ const data = [
         img: 'assets/portfolio/3.jpg'
     },
     {
-        title: 'Graphics',
+        title: 'Logo Design',
+        catalog: 'Graphic Design',
+        img: 'assets/portfolio/2.jpg'
+    },
+    {
+        title: 'Demo Reel',
         catalog: 'Graphic Design',
         img: 'assets/portfolio/4.jpg'
+    },
+    {
+        title: 'Graphics',
+        catalog: 'Graphic Design',
+        img: 'assets/portfolio/3.jpg'
     }
 ]
 
@@ -45,7 +55,14 @@ export const portfolio = container => {
         )
     }))
 
-    container.onMounted = ()=> {
+    const $el = h('div', 'portfolio bg-dark',
+        moveOnScrollOpacity(header('My latest crafts', 'Portfolio', ''), {
+            container
+        }),
+        h('div', 'portfolio_contents w-60p m-auto', display)
+    );
+
+    $el.onMounted = ()=> {
         var iso = new Isotope( display, {
             // options
             itemSelector: '.portfolio_photos-item',
@@ -57,10 +74,5 @@ export const portfolio = container => {
           
     }
 
-    return h('div', 'portfolio bg-dark',
-        moveOnScrollOpacity(header('My latest crafts', 'Portfolio', ''), {
-            container
-        }),
-        h('div', 'portfolio_contents w-60p m-auto', display)
-    );
+    return $el
 }

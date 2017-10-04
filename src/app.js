@@ -6,12 +6,15 @@ import { about, about_name, about_title, down_indicator, about_detail} from './v
 import { skills } from './view/skill';
 import { portfolio } from './view/portfolio'
 import { experiences } from './view/experience';
+import { contact } from './view/contact'
+import { footer } from './view/footer'
 import { MoveOnScroll } from './hoc/moveOnScroll';
   
 const container = h('div', 'container', intro, about, down_indicator)
 document.body.appendChild(container)
-  
-  
+
+const $portfolio = portfolio(container);
+const $contact = contact(container)
 //timeline
 wait(2000)
 .then( ()=> {
@@ -51,10 +54,12 @@ wait(2000)
   container.appendChild(about_detail(container))
   container.appendChild(skills(container))
   container.appendChild(experiences(container))
-  container.appendChild(portfolio(container))
-
+  container.appendChild($portfolio)
+  container.appendChild($contact)
+  container.appendChild(footer(container))
   return wait(1000)
 })
 .then( ()=> {
-  container.onMounted()
+  $portfolio.onMounted()
+  $contact.onMounted()
 })

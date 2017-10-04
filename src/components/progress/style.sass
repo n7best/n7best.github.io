@@ -1,3 +1,4 @@
+$content-break: "only screen and (max-width : 960px)";
 .progress {
     width: 100%;
     color: #111;
@@ -17,10 +18,14 @@
 
         .progress-title {
             animation: fadeInTop .5s forwards;
+            text-align: left;
         }
 
         .progress-tag {
             animation: fadeInTop 1s 1.5s forwards;
+            @media #{$content-break} {
+                display: none;
+            }
         }
     }
 

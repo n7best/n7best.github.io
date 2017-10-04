@@ -1,0 +1,144 @@
+.holder {
+    width: 20em;
+    min-height: 37em;
+    border-radius: 1em;
+    position: relative;
+    margin: auto;
+  .outline {
+    background-color: #000;
+    width: 19.5em;
+    min-height: 37em;
+    border-radius: 3em;
+    margin: 1em;
+    .screen {
+        color: #fff;
+        width: 18.2em;
+        height: 35.75em;
+        border-radius: 2em;
+        position: absolute;
+        margin: .65em;
+     background-size: cover;
+      background-repeat: no-repeat;
+      .notification-icons {
+        font-size: .75em;
+        display: inline-block;
+        position: relative;
+        top: .5em;
+        left: -1.25em;
+      }
+      h1 {
+        margin-top: 40px;
+        font-size: 50px;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      .lock-icon, .cam-icon {
+        text-align: center;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        position: absolute;
+        bottom: 20px;
+        padding: 10px;
+        background: rgba(0,0,0,0.2);
+        border-radius: 100%;
+      }
+      .lock-icon {
+        left: 20px;
+      }
+      .cam-icon {
+        right: 20px;
+      }
+      .top-bump {
+        width: 10em;
+        min-height: 1.75em;
+        background-color: black;
+        border-bottom-left-radius: 1.5em;
+        border-bottom-right-radius: 1.5em;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -.1em;
+        .camera {
+          width: 7px;
+          min-height: 7px;
+          background-color: #222;
+          border-radius: 100%;
+          position: absolute;
+              right: 23%;
+            margin-top: -3.5px;
+            top: .75em;
+          .inner-camera {
+            width: 4px;
+            min-height: 4px;
+            background-color: #2c3e50;
+            border-radius: 100%;
+            position: absolute;
+            margin-left: -2px;
+            left: 50%;
+            margin-top: -2px;
+            top: 50%;
+          }
+        }
+        .ear-speaker {
+          width: 45px;
+          min-height: 3px;
+          background-color: #333;
+          border-radius: 3px;
+          position: absolute;
+          margin-left: -22.5px;
+          left: 50%;
+          margin-top: -1.5px;
+          top: .75em;
+        }
+      }
+      .vol-up, .vol-down, .silent {
+          width: 5px;
+          min-height: 40px;
+          background-color: #ddd;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          position: absolute;
+          margin-left: -12.5px;
+          background: linear-gradient(to right, #333, #111);
+          z-index: 2;
+      }
+      .silent {
+        top: 50px;
+        min-height: 25px;
+      }
+      .vol-up {
+        top: 100px;
+      }
+      .vol-down {
+        top: 150px;
+      }
+      .power {
+          width: 5px;
+          min-height: 50px;
+          background-color: #ddd;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          position: absolute;
+          right: 0px;
+          margin-right: -12.5px;
+          top: 120px;
+          background: linear-gradient(to right, #111, #333);
+          z-index: 2;
+      }
+      .unlock-bar {
+          width: 80px;
+          min-height: 3px;
+          background-color: #ccc;
+          border-radius: 3px;
+          position: absolute;
+          margin-left: -40px;
+          left: 50%;
+          margin-top: -1.5px;
+          bottom: 8px;
+      }
+    }
+  }
+}
