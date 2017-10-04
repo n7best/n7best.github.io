@@ -3,6 +3,6 @@ import { MoveOnScroll, moveOnScrollOpacity, showOnSeen } from '../hoc/moveOnScro
 
 export const footer = container => {
 
-    return h('div', 'footer')
+    return h('div', 'footer', 'Copyright 2016 Charlie Lin')
 
 }
