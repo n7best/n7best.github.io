@@ -30,7 +30,7 @@ const wait = (time) => {
   }
 
 //intro components
-const intro_text = h('span', '', 'Hi, there!')
+const intro_text = h('span', '', 'Work In Progress!')
 
 const intro = h('div', 'intro', intro_text)
 const logo = h('img', 'logo')
