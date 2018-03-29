@@ -101,6 +101,9 @@ p {
 .about {
   margin-top: 15vh;
   display: none; }
+  .about-update {
+    color: #ccc;
+    font-size: 12px; }
   .about-name {
     font-family: 'Quicksand', sans-serif;
     font-size: 5.5em;
@@ -283,7 +286,8 @@ p {
       display: inline-block;
       margin: 1em;
       box-sizing: border-box;
-      vertical-align: top; }
+      vertical-align: top;
+      color: #fff; }
       @media only screen and (max-width: 960px) {
         .portfolio_photos-item {
           width: 100%;
@@ -1700,41 +1704,41 @@ a[class^="icon-"], a[class*=" icon-"], span[class^="icon-"], span[class*=" icon-
       width: 80%;
       margin: 10em auto; } }
   .code-mock.visible .code-mock_editor-line:nth-child(1) {
-    animation: type 0.5s 1s steps(20, end) forwards; }
+    animation: type 0.5s 0s steps(20, end) forwards; }
     .code-mock.visible .code-mock_editor-line:nth-child(1) .code-mock_editor-cursor {
-      animation: blink 1s 2s 1 forwards; }
+      animation: blink 0.5s 1s 1 forwards; }
   .code-mock.visible .code-mock_editor-line:nth-child(2) {
-    animation: type 0.5s 3s steps(20, end) forwards; }
+    animation: type 0.5s 1s steps(20, end) forwards; }
     .code-mock.visible .code-mock_editor-line:nth-child(2) .code-mock_editor-cursor {
-      animation: blink 1s 4s 1 forwards; }
+      animation: blink 0.5s 1.75s 1 forwards; }
   .code-mock.visible .code-mock_editor-line:nth-child(3) {
-    animation: type 0.5s 5s steps(20, end) forwards; }
+    animation: type 0.5s 2s steps(20, end) forwards; }
     .code-mock.visible .code-mock_editor-line:nth-child(3) .code-mock_editor-cursor {
-      animation: blink 1s 6s 1 forwards; }
+      animation: blink 0.5s 2.5s 1 forwards; }
   .code-mock.visible .code-mock_editor-line:nth-child(4) {
-    animation: type 0.5s 7s steps(20, end) forwards; }
+    animation: type 0.5s 3s steps(20, end) forwards; }
     .code-mock.visible .code-mock_editor-line:nth-child(4) .code-mock_editor-cursor {
-      animation: blink 1s 8s 1 forwards; }
+      animation: blink 0.5s 3.25s 1 forwards; }
   .code-mock.visible .code-mock_editor-line:nth-child(5) {
-    animation: type 0.5s 9s steps(20, end) forwards; }
+    animation: type 0.5s 4s steps(20, end) forwards; }
     .code-mock.visible .code-mock_editor-line:nth-child(5) .code-mock_editor-cursor {
-      animation: blink 1s 10s 1 forwards; }
+      animation: blink 0.5s 4s 1 forwards; }
   .code-mock.visible .code-mock_editor-line:nth-child(6) {
-    animation: type 0.5s 11s steps(20, end) forwards; }
+    animation: type 0.5s 5s steps(20, end) forwards; }
     .code-mock.visible .code-mock_editor-line:nth-child(6) .code-mock_editor-cursor {
-      animation: blink 1s 12s 1 forwards; }
+      animation: blink 0.5s 4.75s 1 forwards; }
   .code-mock.visible .code-mock_editor-line:nth-child(7) {
-    animation: type 0.5s 13s steps(20, end) forwards; }
+    animation: type 0.5s 6s steps(20, end) forwards; }
     .code-mock.visible .code-mock_editor-line:nth-child(7) .code-mock_editor-cursor {
-      animation: blink 1s 14s 1 forwards; }
+      animation: blink 0.5s 5.5s 1 forwards; }
   .code-mock.visible .code-mock_editor-line:nth-child(8) {
-    animation: type 0.5s 15s steps(20, end) forwards; }
+    animation: type 0.5s 7s steps(20, end) forwards; }
     .code-mock.visible .code-mock_editor-line:nth-child(8) .code-mock_editor-cursor {
-      animation: blink 1s 16s 1 forwards; }
+      animation: blink 0.5s 6.25s 1 forwards; }
   .code-mock.visible .code-mock_editor-line:nth-child(9) {
-    animation: type 0.5s 17s steps(20, end) forwards; }
+    animation: type 0.5s 8s steps(20, end) forwards; }
     .code-mock.visible .code-mock_editor-line:nth-child(9) .code-mock_editor-cursor {
-      animation: blink 1s 18s 1 forwards; }
+      animation: blink 0.5s 7s 1 forwards; }
   .code-mock_menu {
     width: 100%;
     box-sizing: border-box;

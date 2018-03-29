@@ -30,7 +30,7 @@ const wait = (time) => {
   }
 
 //intro components
-const intro_text = h('span', '', 'Work In Progress!')
+const intro_text = h('span', '', 'made with 💖 in 🗽')
 
 const intro = h('div', 'intro', intro_text)
 const logo = h('img', 'logo')
@@ -146,9 +146,10 @@ const showOnSeen = (component, container, clz = 'visible') => {
 }
 
 const about_name = h('p', 'about-name', 'Charlie Lin')
-const about_title = h('p', 'about-title', 'WEB DESIGNER / WEB DEVELOPER')
+const about_title = h('p', 'about-title', 'FOUNDER / WEB DEVELOPER')
+const last_update = h('p', 'about-update', 'Last Updated: 2017-10-10')
 const down_indicator = button('fa fa-long-arrow-down', '', 'btn-grey about-btn')
-const about = h('div', 'about', about_name, about_title)
+const about = h('div', 'about', about_name, about_title, last_update)
 
 
 
@@ -177,7 +178,7 @@ const about_detail = container =>
         }),
         moveOnScrollOpacity(h(
             'p', 'about-detail_intro', 
-            'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.'),
+            'Charlie is a founder, designer, developer and IT consultant that specializes in creating beautiful software products. Some of his clients include startups, small business, Facebook and Tencent.'),
             {container}, 15  
         ),
         moveOnScrollOpacity(badgeArea, {container}, 15),
@@ -221,7 +222,7 @@ const morelink = 'https://www.linkedin.com/in/n7best/'
 const codes = [
     `[`,
     `    "I'm a web developer", `,
-    `    "I'm a web designer", `,
+    `    "I'm a designer", `,
     `    "lets's work together!" `,
     `]`
 ]
@@ -298,7 +299,7 @@ const skills = container => {
         }),
         moveOnScrollOpacity(h(
             'p', 'skills_intro', 
-            'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.'),
+            'I believe to craft a masterpiece, every fundamental element of the process had to be masterd. I am skilled from product concept, marketing, sales channel to software architecture, design and programming.'),
             {container}, 15  
         ),
         showOnSeen(codeMock(codes), container),
@@ -307,7 +308,7 @@ const skills = container => {
         }),
         moveOnScrollOpacity(h(
             'p', 'skills_intro text-left m-b-5', 
-            'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.'),
+            'I am specialize to design and build interactive web applications.'),
             {container}, 15  
         ),
         h('div', 'skills_data m-auto w-60p text-left', skill_list),
@@ -318,34 +319,40 @@ const skills = container => {
 
 const data$1 = [
     {
-        title: 'Project Web',
-        catalog: 'Graphic Design',
-        img: 'assets/portfolio/4.jpg'
+        title: 'Github',
+        catalog: 'Open Source',
+        img: 'assets/portfolio/github.jpg',
+        link: 'https://github.com/n7best'
     },
     {
-        title: 'Logo Design',
-        catalog: 'Graphic Design',
-        img: 'assets/portfolio/2.jpg'
+        title: 'Codepen',
+        catalog: 'Frontend',
+        img: 'assets/portfolio/codepen.png',
+        link: 'https://codepen.io/n7best'
     },
     {
-        title: 'Demo Reel',
-        catalog: 'Graphic Design',
-        img: 'assets/portfolio/3.jpg'
+        title: 'WeUI',
+        catalog: 'UI/UX',
+        img: 'assets/portfolio/weui.jpg',
+        link: 'https://github.com/Tencent/weui'
     },
     {
-        title: 'Logo Design',
-        catalog: 'Graphic Design',
-        img: 'assets/portfolio/2.jpg'
+        title: 'Pariswedding',
+        catalog: 'Small Business',
+        img: 'assets/portfolio/paris.jpg',
+        link: 'https://pariswedding.nyc'
     },
     {
-        title: 'Demo Reel',
-        catalog: 'Graphic Design',
-        img: 'assets/portfolio/4.jpg'
+        title: 'Macao Tea',
+        catalog: 'Small Business',
+        img: 'assets/portfolio/mit.png',
+        link: 'http://macaoimperialtea.us/'
     },
     {
-        title: 'Graphics',
-        catalog: 'Graphic Design',
-        img: 'assets/portfolio/3.jpg'
+        title: 'CoinPen',
+        catalog: 'Bloackchain',
+        img: 'assets/portfolio/coinpen.png',
+        link: 'http://coinpen.io'
     }
 ]
 
@@ -360,13 +367,20 @@ const portfolio = container => {
         const title_chunks = item.title.match(/.{1,2}/g).map(str=>{
             return h('span', 'portfolio_photos-item-title_chunk', str)
         })
-        
-        return h('div', 'portfolio_photos-item',
+
+        let el = h(item.link ? 'a' : 'div', 'portfolio_photos-item',
             img,
             h('div', 'dark-bg'),
             icon,
             h('h3', 'portfolio_photos-item-title', title_chunks)
         )
+
+        if(item.link) {
+            el.href = item.link
+            el.target = "_blank"
+        }
+    
+        return el;
     }))
 
     const $el = h('div', 'portfolio bg-dark',
@@ -394,16 +408,16 @@ const portfolio = container => {
 const data$2 = [
     {
         from: {
-            year: '2017',
+            year: '2012',
             month: 'Apr'
         },
         to: {
             year: 'Present',
             month: ''
         },
-        title: 'Senior Frontend Developer',
-        company: 'Vision Media Marketing',
-        detail: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.`,
+        title: 'Fullstack Web Developer',
+        company: 'Freelancer & Vision Media Marketing',
+        detail: `Fullstack to me means from the campaigning advertisement to the meeting table with you, from product ideas to product launched and from product design to scalable software.`,
         icons: [
             'icon-html5-01',
             'icon-css3-01',
@@ -412,21 +426,31 @@ const data$2 = [
     },
     {
         from: {
-            year: '2015',
-            month: 'july'
+            year: '2011',
+            month: 'Apr'
         },
         to: {
-            year: '2017',
+            year: 'Present',
+            month: ''
+        },
+        title: 'Director of Technology',
+        company: 'Paris Wedding Group',
+        detail: `Responsobile for overall planning, organizing, and execution of all IT functions throughout all retail location and studios.`,
+        icons: []
+    },
+    {
+        from: {
+            year: '2012',
+            month: 'nov'
+        },
+        to: {
+            year: '2016',
             month: 'Apr'
         },
         title: 'Communication Technician',
         company: 'United States Marine Corps',
-        detail: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.`,
-        icons: [
-            'icon-html5-01',
-            'icon-css3-01',
-            'icon-prog-js01'
-        ]
+        detail: `Maintains, operates and repairs sophisticated and modern equipment and systems which include: air defense and surveillance radar systems, aviation radio communication systems, air traffic control systems, command and control tactical data systems, and short range air defense weapon systems.`,
+        icons: []
     }
 ]
 const experiences = container => {
@@ -464,8 +488,8 @@ const experiences = container => {
             container
         }),
         moveOnScrollOpacity(h(
-            'p', 'experiences_intro', 
-            'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.'),
+            'p', 'experiences_intro',
+            /* 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.' */''),
             {container}, 15  
         ),
         h('div', 'experiences_content text-left w-60p', 
@@ -520,12 +544,16 @@ const iphone = (container, content) => {
 const data$3 = {
     info: {
         title: 'Let\'s have a talk',
-        intro: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.',
+        intro: 'You need a product/website that\'s well design and actually works. That\'s what I offer. And if you want to learn more about working with me, send me a message.',
         icons: [
-            'fa fa-twitter',
-            'fa fa-facebook',
-            'fa fa-linkedin',
-            'fa fa-google-plus'
+            {
+                className:  'fa fa-twitter',
+                link: 'https://twitter.com/n7best'
+            },
+            {
+                className:  'fa fa-linkedin',
+                link: 'https://www.linkedin.com/in/n7best/'
+            }
         ],
         address: {
             line1: '65-30 Kissena Blvd.',
@@ -608,7 +636,12 @@ const contact = container => {
                 moveOnScrollOpacity(h( 'p', 'contact_content-detail_intro', data$3.info.intro),
                     {container}, 15  
                 ),
-                moveOnScrollOpacity(h('ul', 'icon-list',  data$3.info.icons.map( icon=> h('li', icon))),{
+                moveOnScrollOpacity(h('ul', 'icon-list',  data$3.info.icons.map( icon=> {
+                    const el = h('a', '' ,h('li', icon.className));
+                    el.href = icon.link
+                    el.target = "_blank"
+                    return el;
+                })),{
                     container
                 })
             )
@@ -641,7 +674,7 @@ const contact = container => {
 
 const footer = container => {
 
-    return h('div', 'footer', 'Copyright 2016 Charlie Lin')
+    return h('div', 'footer', 'Copyright 2011 - ' + new Date().getFullYear() + ' Charlie Lin')
 
 }
 
